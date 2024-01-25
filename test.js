@@ -2,6 +2,7 @@ const assert = require('chai').assert;
 const puppeteer = require('puppeteer-core');
 
 describe('ShakeSearch', () => {
+
   let browser;
   let page;
 
