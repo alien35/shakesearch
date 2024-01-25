@@ -2,14 +2,13 @@ const assert = require('chai').assert;
 const puppeteer = require('puppeteer-core');
 
 describe('ShakeSearch', () => {
-
   let browser;
   let page;
 
   before(async () => {
     browser = await puppeteer.launch({
       executablePath: '/usr/bin/chromium-browser',
-      args: ['--no-sandbox']
+      args: ['--no-sandbox'],
     });
     page = await browser.newPage();
     await page.goto('http://localhost:3002');
