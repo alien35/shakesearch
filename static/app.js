@@ -12,7 +12,7 @@ const Controller = {
 
     const form = document.getElementById("form");
     const data = Object.fromEntries(new FormData(form));
-    const response = fetch(`/search?q=${data.query}&page=${Controller.currentPage}&pageSize=${Controller.pageSize}`).then((response) => {
+    fetch(`/search?q=${data.query}&page=${Controller.currentPage}&pageSize=${Controller.pageSize}`).then((response) => {
       response.json().then((results) => {
         Controller.updateTable(results, loadMore);
         if (results.length > 0) {
@@ -34,7 +34,7 @@ const Controller = {
       table.innerHTML = rows.join('');
     }
   },
-  
+
   clearTable: () => {
     document.getElementById("table-body").innerHTML = '';
   }
