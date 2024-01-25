@@ -101,7 +101,7 @@ func (s *Searcher) Search(query string, page, pageSize int) []string {
 	lowerCaseQuery := strings.ToLower(query)
 	idxs := s.SuffixArray.Lookup([]byte(lowerCaseQuery), -1)
 	
-	// Calculate start and end index for slicing the results
+	// Calculate start and end index for slicing the results.
 	startIdx := page * pageSize
 	endIdx := startIdx + pageSize
 	if endIdx > len(idxs) {
