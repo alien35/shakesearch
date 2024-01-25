@@ -55,14 +55,14 @@ func handleSearch(searcher Searcher) func(w http.ResponseWriter, r *http.Request
 			// Initialize default values for pagination.
 			page := 0
 			pageSize := 20
-			// Parse 'page' parameter from URL query, if present.
+			// Parse the 'page' parameter from URL query, if present.
 			if p, ok := queryValues["page"]; ok {
 					parsedPage, err := strconv.Atoi(p[0])
 					if err == nil {
 							page = parsedPage
 					}
 			}
-			// Parse 'pageSize' parameter from URL query, if present.
+			// Parse the 'pageSize' parameter from URL query, if present.
 			if ps, ok := queryValues["pageSize"]; ok {
 					parsedPageSize, err := strconv.Atoi(ps[0])
 					if err == nil && parsedPageSize > 0 {
